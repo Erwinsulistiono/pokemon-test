@@ -2,7 +2,7 @@ import React from 'react';
 import DetailBox from './DetailBox';
 
 const MovesWrapper = (moves) => {
-  let move = moves.moves;
+  const move = moves.moves;
 
   return (
     <>

@@ -3,7 +3,7 @@ import PokemonCard from './PokemonCard';
 
 const PokemonWrapper = (pokemons) => {
 
-    let newPokemons = pokemons.pokemons.map((p) => 
+    const newPokemons = pokemons.pokemons.map((p) => 
         Object.assign({}, p, {count:0})
     )
 

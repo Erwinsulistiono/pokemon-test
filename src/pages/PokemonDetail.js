@@ -12,7 +12,7 @@ import PokeballButton from '../components/PokeballButton';
 import EditName from '../components/EditName';
 import Modal from "../components/Modal";
 
-import '../style/PokemonDetails.css';
+import '../style/Styles.css';
 
 function handleCatchPokemon({id, name, image}) {
   if (Math.random() > 0.5) return alert('Pokemon Gagal Ditangkap');
@@ -23,32 +23,37 @@ function handleCatchPokemon({id, name, image}) {
   sessionStorage.setItem('myPokemon', JSON.stringify(myNewPokemons));
 
   alert('Pokemon Berhasil Ditangkap');
+  window.history.go(-1);
 }
 
 function handleReleasePokemon({ id, name, image }) {
+  const existingPokemons = JSON.parse(sessionStorage.getItem('myPokemon'));
+  const newPokemons = existingPokemons.filter(pokemon => pokemon.name !== name);
+  
+  sessionStorage.setItem('myPokemon', JSON.stringify(newPokemons));
   alert('Pokemon Berhasil Dilepaskan');
+  window.history.go(-1);
 }
 
 function renamePokemon({ id, name, image }) {
-  let el = document.body.querySelector('#new-pokemon-name');
+  const el = document.body.querySelector('#new-pokemon-name');
   const existingPokemons = JSON.parse(sessionStorage.getItem('myPokemon'));
 
   const myNewPokemons = existingPokemons.map(p => {
-    if (p.id == id) return {id: id, name: el.value, image: image, oldName: name};
+    if (p.id === id) return {id: id, name: el.value, image: image, oldName: name};
     return p;
   })
 
   sessionStorage.setItem('myPokemon', JSON.stringify(myNewPokemons));
-  alert('pokemon kerename')
+  alert('nama pokemon berhasil diperbaharui')
+  window.history.go(-1);
 }
 
 const PokemonDetail = () => {
   const location = useLocation()
   const [ show, setShow ] = useState(false);
   const prevWindow = (location.state.path);
-  let pokemon = (location.state.pokemon.value);
-
-  console.log('prevwindow', prevWindow)
+  const pokemon = (location.state.pokemon.value);
 
   const { loading, error, data } = useQuery(GET_POKEMON, {
       variables: {
@@ -87,7 +92,7 @@ const PokemonDetail = () => {
         </div>
       </div>
       <div className="btn-footer-container">
-        <button className="btn-catch-release" onClick={() => { (prevWindow != '/') ? handleReleasePokemon(pokemon) : handleCatchPokemon(pokemon)}} >
+        <button className="btn-catch-release" onClick={() => { (prevWindow !== '/') ? handleReleasePokemon(pokemon) : handleCatchPokemon(pokemon)}} >
           <PokeballButton prevWindow={prevWindow} />
         </button>
         <button className="btn-catch-release" onClick={() => {setShow(true)}} >

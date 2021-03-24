@@ -2,8 +2,7 @@ import React from 'react';
 import DetailBox from './DetailBox';
 
 const TypeWrapper = (pokemon) => {
-  const types = pokemon.pokemon.types
-  console.log(types);
+  const types = pokemon.pokemon.types;
 
   return (
     <>

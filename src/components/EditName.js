@@ -1,11 +1,11 @@
 import React from 'react';
 import Pencil from '../img/pencil.png';
-import '../style/Style.css';
+import '../style/Styles.css';
 
 const EditName = (prevWindow) => {
 
   return (
-    (prevWindow.prevWindow != '/') &&      
+    (prevWindow.prevWindow !== '/') &&      
         <img 
         src={Pencil} 
         alt="Edit Name" 

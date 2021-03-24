@@ -1,7 +1,7 @@
 import React from 'react';
 import PokemonWrapper from '../components/PokemonWrapper';
 import PokemonNavbar from '../components/PokemonNavbar' ;
-import '../style/Card.css';
+import '../style/Styles.css';
 
 const MyPokemons = () => {
     const isOwnPokemons = sessionStorage.getItem('myPokemon') ? true : false;

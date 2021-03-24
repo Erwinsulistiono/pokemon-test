@@ -1,12 +1,10 @@
 import React from 'react';
 import pokeballOpen from '../img/open-pokeball.png';
 import pokeballClosed from '../img/closed-pokeball.png';
-import { useHistory, useLocation } from 'react-router-dom';
-import '../style/Style.css';
+import '../style/Styles.css';
 
 const PokeballButton = (prevWindow) => {
-  console.log(prevWindow.prevWindow);
-  const img = (prevWindow.prevWindow != '/') ? pokeballOpen : pokeballClosed;
+  const img = (prevWindow.prevWindow !== '/') ? pokeballOpen : pokeballClosed;
   return (
       <img 
       src={img} 

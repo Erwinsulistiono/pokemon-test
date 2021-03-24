@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/Button.css';
+import '../style/Styles.css';
 
 const LoadMore = ({
     onclick

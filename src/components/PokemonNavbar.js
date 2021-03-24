@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../style/Navbar.css';
+import '../style/Styles.css';
 import PokemonLogo from '../img/pokemon-logo.png';
 import Bag from '../img/bag.png'
 
@@ -20,14 +20,14 @@ const PokemonNavbar = () => {
       </Link>
       <Link to="/my-pokemon">
         <section className="navbar">
-          <a className="navbar-item">
+          <button className="navbar-item">
             <img
               src={Bag}
               alt="Pokeball"
               width="auto"
               height="80">
             </img>
-          </a>
+          </button>
         </section>
       </Link>
     </section>

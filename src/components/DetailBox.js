@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/PokemonDetails.css';
+import '../style/Styles.css';
 
 const DetailBox = (data) => {
   const detail = data.data;

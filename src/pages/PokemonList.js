@@ -5,7 +5,7 @@ import PokemonWrapper from '../components/PokemonWrapper';
 import PokemonNavbar from '../components/PokemonNavbar' ;
 import LoadMore from '../components/LoadMore';
 import LoadingScreen from '../components/Loading';
-import '../style/Card.css';
+import '../style/Styles.css';
 
 
 const PokemonList = () => {
@@ -43,7 +43,6 @@ const PokemonList = () => {
 
     if (loading) return <LoadingScreen />;
     if (error) return console.log(error);
-    console.log(data.pokemons.results);
 
     return (
         <>
