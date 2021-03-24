@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+
+/* RESETS
+=========================================== */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  color: #202020;
+  background-color: #f2f2f2;
+  font-smooth: always;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #e51a22;
+  background-size: 10px, 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* POKEMON APP
+=========================================== */
+.container {
+  margin: 40px 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 85%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.box-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  width: -webkit-fill-available;
+}
+
+@media (max-width: 960px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card {
+    width: fit-content;
+    max-width: fit-content;
+  }
+
+  .box-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 800px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card {
+    width: fit-content;
+    max-width: fit-content;
+  }
+
+  .box-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card {
+    width: fit-content;
+    max-width: fit-content;
+    align-self: center;
+  }
+
+  .box-wrapper {
+    flex-direction: column;
+  }
+}
+
+.details-value {
+  background: #fff;
+  margin: 1rem;
+  padding: 0;
+  display: inline-block;
+  min-height: auto;
+}
+
+.btn-footer-container {
+  bottom: 0;
+  right: 1rem;
+  position: fixed;
+  display: flex;
+  flex: auto;
+}
+
+.btn-catch-release {
+  margin: 1 rem;
+  padding: 1 rem;
+  background: transparent;
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  font-family: "Dekko", cursive;
+  font-weight: bold;
+}
+
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal.exit {
+  opacity: 0;
+}
+
+.modal-content {
+  width: 35%;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200px);
+  border: 0.4rem solid #000;
+  box-shadow: 0.4rem 0.4rem 0 black;
+  background: url('data:image/svg+xml;utf8,<svg width="10" height="10" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #fff;
+}
+
+.modal.enter-done .modal-content {
+  transform: translateY(0);
+}
+
+.modal.exit .modal-content {
+  transform: translateY(-200px);
+}
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.input-field {
+  border: 0.1rem solid #000;
+  width: 100%;
+}
